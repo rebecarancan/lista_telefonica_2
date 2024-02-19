@@ -8,12 +8,15 @@
 
 * Rails version: 6.0.6.1
 
+* Yarn
+
 ## Set up the app
 
 After downloading the repository:
 
     $ cd lista-telefonica
     $ bundle install
+    $ rails webpacker:install
     $ rails db:create db:migrate
     $ rails s
 
