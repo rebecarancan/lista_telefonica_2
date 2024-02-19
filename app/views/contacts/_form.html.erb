@@ -1,0 +1,31 @@
+<%= form_for contact do |form| %>
+  <% if contact.errors.any? %>
+    <div id="error_explanation">
+      <p><%= contact.errors.full_messages.join(", ") %></p>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :first_name %><br>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div>
+    <%= form.label :last_name %><br>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div>
+    <%= form.label :phone_number %><br>
+    <%= form.text_field :phone_number %>
+  </div>
+
+  <div>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.submit "Enviar" %>
+  </div>
+<% end %>

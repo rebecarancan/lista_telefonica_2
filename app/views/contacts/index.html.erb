@@ -1,0 +1,30 @@
+<h1>Contatos</h1>
+
+<div>
+  <%= link_to "Criar contato", new_contact_path %>
+</div>
+
+<% if @contacts.empty? %>
+  <h2>Voce ainda nao possui contatos</h2>
+<% else %>
+  <table class="contacts-table">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone Number</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%=contact.first_name%></td>
+        <td><%=contact.last_name%></td>
+        <td><%=contact.phone_number%></td>
+        <td><%= link_to "Detalhes", contact_path(contact.id) %></td>
+        <td><%= link_to "Deletar", contact_path(contact.id), method: :delete, data: { confirm: "Tem certeza?" } %> </td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

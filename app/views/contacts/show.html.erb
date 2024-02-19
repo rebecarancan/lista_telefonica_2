@@ -1,0 +1,8 @@
+<h1> Contato </h1>
+
+<p><%= @contact.first_name %></p>
+<p><%= @contact.last_name %></p>
+<p><%= @contact.phone_number %></p>
+<p><%= @contact.description %></p>
+
+<%= link_to "Editar", edit_contact_path(@contact.id) %>
